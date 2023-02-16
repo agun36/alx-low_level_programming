@@ -1,11 +1,10 @@
 #include <stdio.h>
+
 /**
  *  Main - Starting point
  *
  * Return : Always end with 0 (success)
  */
-
-
 
 int main(void) 
 {
