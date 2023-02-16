@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
- * main: Starts
- * Return: return 0 means success
+ * main - Starting  point
+ *
+ * Return: Always End in  0 (Success)
  */
-
 int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
-	return 0;
+	return (0);
 }
+
