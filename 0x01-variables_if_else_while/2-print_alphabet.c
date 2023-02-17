@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Prints the alphabet.
  *
- *Description: 'print out a to z'
- *
- * Return : 0 (success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
