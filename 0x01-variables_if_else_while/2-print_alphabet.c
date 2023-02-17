@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- *  main -start 
- *  Return :0
+ *  main - start point
+ *
+ *  Return :0 (success)
  */
 int main(void)
 {
@@ -13,6 +14,6 @@ int main(void)
 		putchar(ch);
 		ch++;
 	}
-	putchar(\n);
+	putchar("\n");
 	return 0;
 }
