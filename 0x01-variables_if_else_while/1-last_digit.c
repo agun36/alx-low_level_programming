@@ -6,7 +6,7 @@
  *  main - starting points
  *  void - Empty value
  *
- *  Return: value 0
+ * Return: value 0
  */ 
 int main(void)
 {
