@@ -1,9 +1,11 @@
 #include <stdio.h>
 
-/*
- * main - This will prints letter a to z in lowercase
+/**
+ * main - Entry point
  *
- * Return : 0
+ *Description: 'print out a to z'
+ *
+ * Return : 0 (success)
  */
 int main(void)
 {
