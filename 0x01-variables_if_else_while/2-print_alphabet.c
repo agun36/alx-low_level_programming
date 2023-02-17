@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 /**
- *  main - start point
+ * main - printing aplhabet of A to Z
  *
- *  Return :0 (success)
+ * Return :0 (success)
  */
 int main(void)
 {
 	char ch = "a";
 
-	while(ch <= "z")
+	while (ch <= "z")
 	{
 		putchar(ch);
 		ch++;
 	}
+	putchar("\n");
 	return (0);
 }
