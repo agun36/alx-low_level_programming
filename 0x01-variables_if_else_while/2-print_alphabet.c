@@ -1,19 +1,18 @@
 #include <stdio.h>
 
-/**
- * main - printing aplhabet of A to Z
+/*
+ * main - This will prints letter a to z in lowercase
  *
- * Return :0 (success)
+ * Return : 0
  */
 int main(void)
 {
-	char ch = "a";
+	char ch = 'a';
 
-	while (ch <= "z")
+	while (ch <= 'z')
 	{
 		putchar(ch);
 		ch++;
 	}
-	putchar("\n");
 	return (0);
 }
