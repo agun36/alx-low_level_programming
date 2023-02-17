@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-
 /**
  * main - Check if a number.
  * @void: Empty value
@@ -29,4 +28,5 @@ int main(void)
 		printf("%d is negative\n", n);
 	}
 	return (0);
+	
 }
