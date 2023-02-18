@@ -7,18 +7,20 @@
  */
 int main(void)
 {
-	int num = 0;
-	char ch = 'a';
+	int num = '0';
 
-	while (num <= 10)
+	while (num <= '9')
 	{
-		putchar(num + '0');
+		num = putchar(num);
 		num++;
 	}
-	while (ch <= 'f')
+
+	num = 'a';
+
+	while (num <= 'f')
 	{
-		putchar(ch);
-		ch++;
+		num = putchar(num);
+		num++;
 	}
 	putchar('\n');
 	return (0);
