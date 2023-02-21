@@ -14,9 +14,7 @@ int main(void)
 	n2 = 2;
 	boolean =  boolean2 = 1;
 	printf("%ld, %ld", n1, n2);
-	c = 0;
-
-	while (c < 96)
+	for (c = 0; c < 96; c++)
 	{
 		if (boolean)
 		{
@@ -46,7 +44,6 @@ int main(void)
 		}
 		if (((n1 + n2) < 0) && boolean == 1)
 			boolean = 0;
-		c++;
 	}
 	printf("\n");
 	return (0);
