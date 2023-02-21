@@ -17,6 +17,7 @@ void print_times_table(int n)
 		while (row <= n)
 		{
 			_putchar('0');
+			
 			column = 1;
 
 			while (column <= n)
