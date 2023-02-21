@@ -14,7 +14,7 @@ int main(void)
 	n2 = 2;
 	printf("%ld, %ld", n1, n2);
 	c = 0;
-	while ( c < 48)
+	while (c < 48)
 	{
 		fn = n1 + n2;
 		printf(", %ld", fn);
