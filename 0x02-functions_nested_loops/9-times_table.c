@@ -20,7 +20,7 @@ void times_table(void)
 
 		while (column <= 9)
 		{
-			products = column * 9;
+			products = column * row;
 			_putchar(',');
 			_putchar(' ');
 
