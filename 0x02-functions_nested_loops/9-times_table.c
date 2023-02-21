@@ -15,7 +15,7 @@ void times_table(void)
 
 	while (row <= 9)
 	{
-		column = 0;
+		column = 1;
 
 		while (column <= 9)
 		{
