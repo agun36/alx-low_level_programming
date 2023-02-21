@@ -5,7 +5,7 @@
  *
  * Return: Always 0.
  */
-void jack_baur(void)
+void jack_bauer(void)
 {
 	int hour, minute;
 
