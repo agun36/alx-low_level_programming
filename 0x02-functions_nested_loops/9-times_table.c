@@ -15,6 +15,8 @@ void times_table(void)
 
 	while (row <= 9)
 	{
+		column = 0;
+
 		while (column <= 9)
 		{
 			products = column * 9;
