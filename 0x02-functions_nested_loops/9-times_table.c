@@ -31,9 +31,8 @@ void times_table(void)
 			else
 			{
 				_putchar(products / 10 + '0');
-				_putchar(products % 10 + '0');
+				_putchar((products % 10) + '0');
 			}
-			_putchar('\n');
 			column++;
 		}
 		_putchar('\n');
