@@ -11,13 +11,12 @@ void print_times_table(int n)
 	int row, column, products;
 
 
-	if (n >= 15 || n <= 0)
+	if (n >= 0 && n <= 15)
 	{
 		row = 0;
 		while (row <= n)
 		{
 			_putchar('0');
-
 			column = 1;
 
 			while (column <= n)
