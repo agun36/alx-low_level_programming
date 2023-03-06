@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+0x07. C - Even more pointers, arrays and strings
+i like doing hard things
+=======
 # 0x00. C - Hello, World
 ## Description
 What you should learn from this project:
@@ -27,3 +31,4 @@ What you should learn from this project:
 ### 6. [Size is not grandeur, and territory does not make a nation](./6-size.c)
 * Write a C program that prints the size of various types on the computer it is compiled and run on.
 
+>>>>>>> 383e64a295bbb24fd8a0ceeb6d00319929bb7165
