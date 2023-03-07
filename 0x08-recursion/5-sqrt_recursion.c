@@ -7,22 +7,23 @@
  *
  * Return: int
  */
+int check(int a, int b)
+{
+	if (a * a == b)
+		return (a);
+	if (a * a > b)
+		return (-1);
+	return (check(a + 1, b));
+}
+
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: integer to find sqrt of
+ * Return: natural square root or -1
+ */
 int _sqrt_recursion(int n)
 {
-	/*Base cases*/
-	if (n == 0 || n == 1)
-		return n;
-
-	/*Try all numbers starting from 1,and going until n/2*/
-	int i = 1, result = 1;
-
-	while (result <= n)
-	{
-		i++;
-		result = i * i;
-	}
-	if (result == n)
-		return (i);
-	else
-		return (-1);
+	if (n == 0)
+		return (0);
+	return (check(1, n));
 }
