@@ -53,9 +53,9 @@ int _atoi(char *s)
  * Return: 0 (Success), 1 (Error)
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv[])
 {
-	if (argc < 3 || argc > 3)
+	if (argc < 3)
 		printf("Error\n");
 	return (1);
 
