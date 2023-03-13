@@ -10,15 +10,20 @@
  */
 char *_strdup(char *str)
 {
-	char *copy;
-	int len;
+	int i, size;
+	char *ptr;
 
-	if (str == NULL)
+	if (!str)
 		return (NULL);
-	len =  strlen(str);
-	copy = malloc(sizeof(char) * (len + 1));
-	if (copy == NULL)
+	size = strlen(str);
+	ptr = malloc(size + 1);
+
+	if (!ptr)
 		return (NULL);
-	strcpy(copy,str);
-	return (copy);
+
+	for (i = 0; str[i]; i++)
+		ptr[i] = str[i];
+	ptr[i] = '\0';
+
+	return (ptr);
 }
