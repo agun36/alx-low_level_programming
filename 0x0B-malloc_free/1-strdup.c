@@ -6,7 +6,7 @@
  * _strdup - returns a pointer to new string which is a duplicate of the string
  * @str: the source string
  *
- * Return: returns a pointer to the duplicated string. It returns NULL if insufficient memory was available.
+ * Return: returns a pointer to the duplicated string.
  */
 char *_strdup(char *str)
 {
