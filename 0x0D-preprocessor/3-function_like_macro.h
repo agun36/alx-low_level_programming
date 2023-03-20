@@ -1,7 +1,7 @@
-#ifndef _SUM_H_
-#define _SUM_H_
+#ifndef _3-function_like_macro_H_
+#define _3-function_like_macro_H_
 
-#define SUM(x, y) ((x) + (y))
+#define ABS(x) ((x < 0) ? (-x) : (x))
 
 #endif
 
