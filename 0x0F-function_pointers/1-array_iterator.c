@@ -6,13 +6,13 @@
  *
  * @array: array to execute func on
  * @size: is the size of the array
- * @action:  is a pointer to the function you need to use
+ * @action: is a pointer to the function you need to use
  *
  * Return: void
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	if (array == NULL || action == NULL)
+	if (array == NULL && action == NULL)
 	{
 		return;
 	}
