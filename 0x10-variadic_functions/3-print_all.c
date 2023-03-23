@@ -21,7 +21,6 @@ void print_all(const char * const format, ...)
 
 	while (format != NULL && format[i] != '\0')
 	{
-		j = 1;
 		switch (format[i])
 		{
 			case 'c':
