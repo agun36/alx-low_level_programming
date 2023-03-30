@@ -3,8 +3,8 @@
 /**
  * print_before_main - Prints a message before the main function is executed.
  *
- * Description: This function prints the message "You're beat! and yet, you must allow,"
- *              followed by a new line and "I bore my house upon my back!", followed by
+ * Description: This function prints the message "You're beat!
+ *              followed by a new line and "I bore my house upon my back!"
  *              a new line.
  *
  * Return: Nothing.
