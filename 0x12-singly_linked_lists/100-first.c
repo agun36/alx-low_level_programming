@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /*
  * Apply the constructor attribute to startupfun()
  * so that it is executed before main()
@@ -12,19 +11,12 @@
  */
 
 	void cleanupfun(void)__attribute__ ((destructor));
-
-
 /**
- * print_before_main - Prints a message before the main function is executed.
+ * startupfun - This functions print a text
  *
- * Description: This function prints the message "You're beat!
- *              followed by a new line and "I bore my house upon my back!"
- *              a new line.
- *
- * Return: Nothing.
  */
-void mystartupfun(void)
-{
-	printf("You're beat! and yet, you must allow,\n");
-	printf("I bore my house upon my back!\n");
-}
+	void startupfun(void)
+	{
+		printf("You're beat! and yet, you must allow,");
+		printf("\nI bore my house upon my back!\n");
+	}
