@@ -8,13 +8,13 @@
  */
 int sum_listint(listint_t *head)
 {
-	listint_t *new = head;
-	unsigned int sum = 0;
+	listint_t *current = head;
+	 int sum = 0;
 
-	while (head != NULL)
+	while (current != NULL)
 	{
-		sum += new->n;
-		head = new->next;
+		sum += current->n;
+		head = current->next;
 	}
 
 	return (sum);
