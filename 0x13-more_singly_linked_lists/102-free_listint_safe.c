@@ -1,4 +1,35 @@
 #include "lists.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+/**
+ * _ra - reallocates memory for an array of pointers
+ * to the nodes in a linked list
+ * @list: the old list to append
+ * @size: size of the new list (always one more than the old list)
+ * @new: new node to add to the list
+ *
+ * Return: pointer to the new list
+ */
+listint_t **_ra(listint_t **list, size_t size, listint_t *new)
+{
+	listint_t **newlist;
+	size_t i;
+
+	newlist = malloc(size * sizeof(listint_t *));
+	if (newlist == NULL)
+	{
+		free(list);
+		exit(98);
+	}
+	for (i = 0; i < size - 1; i++)
+		newlist[i] = list[i];
+	newlist[i] = new;
+	free(list);
+	return (newlist);
+}
+
+
 
 /**
  * free_listint_safe - frees a listint_t list in a safe way
@@ -9,23 +40,31 @@
  * Return: the size of the list that was freed
  * The function sets the head to NULL
  */
-size_t free_listint_safe(listint_t **h)
+size_t free_listint_safe(listint_t **head)
 {
-	size_t size = 0;
-	listint_t *tmp;
+	size_t i, num = 0;
+	listint_t **list = NULL;
+	listint_t *next;
 
-	while (*h)
+	if (head == NULL || *head == NULL)
+		return (num);
+	while (*head != NULL)
 	{
-		size++;
-		if (*h <= (*h)->next)
+		for (i = 0; i < num; i++)
 		{
-			free(*h);
-			*h = NULL;
-			break;
+			if (*head == list[i])
+			{
+				*head = NULL;
+				free(list);
+				return (num);
+			}
 		}
-		tmp = (*h)->next;
-		free(*h);
-		*h = tmp;
+		num++;
+		list = _ra(list, num, *head);
+		next = (*head)->next;
+		free(*head);
+		*head = next;
 	}
-	return (size);
+	free(list);
+	return (num);
 }
