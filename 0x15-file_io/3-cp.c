@@ -1,9 +1,5 @@
 #include "main.h"
 #define BUFFER_SIZE 1024
-#define READ_ERROR "Error Can't read from file %s\n"
-#define WRITE_ERROR "Error Can't write to %s\n"
-#define CLOSE_ERROR "Error: Cant close fd %d\n"
-
 /*
  * check_args - checks that the correct number of arguments were
  * @argc: number of argu
@@ -33,7 +29,7 @@ void check_args(int argc)
  * prints an error message and exits with a status code of 98. If `fd_from` and
  * `fd_to` are not -1, they are closed before exiting.
  */
-void check_read(ssize_t check, *file, int fd_from, int fd_to)
+void check_read(ssize_t check, char  *file, int fd_from, int fd_to)
 {
 	if (check == -1)
 	{
@@ -61,7 +57,7 @@ void check_write(ssize_t check, char *file, int fd_from, int fd_to)
 {
 	if (check == -1)
 	{
-		dprint(STDERR_FILENO, WRITE_ERROR, file);
+		dprintf(STDERR_FILENO, WRITE_ERROR, file);
 		if (fd_from != -1)
 			close(fd_from);
 		if (fd_to != -1)
@@ -101,14 +97,18 @@ int main(int argc, char *argv[])
 	int file_from, file_to;
 	ssize_t bytes_read, bytes_written;
 	char buffer[BUFFER_SIZE];
-
-	mode_t mode = S_IRUSR | S_IWUSR | S_TRGRP | S_IWGRP | S_IROTH;
+	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
 	file_from = open(argv[1], O_RDONLY);
 
 	check_read((ssize_t)file_from, argv[1], -1, -1);
 
-	file_to = open(argv[2], O_CREAT | O_WRONGLY | O_TRUNC, mode);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, mode);
 	check_write((ssize_t)file_to, argv[2], file_from, -1);
 	while ((bytes_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
 	{
@@ -116,9 +116,10 @@ int main(int argc, char *argv[])
 		if (bytes_written != bytes_read)
 			bytes_written = -1;
 		check_write(bytes_written, argv[2], file_from, file_to);
+	}
 
-		check_close(close(file_from), file_from);
-		check_close(close(file_to), file_to);
+	check_close(close(file_from), file_from);
+	check_close(close(file_to), file_to);
 
-		return (0);
+	return (0);
 }
