@@ -13,30 +13,38 @@
   *
   * Return: actual number of letters it could read and prints, 0 otherwise
   */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
-	ssize_t lenght = 0;
-	char *buf = malloc(sizeof(char) * letters);
+	int fd;/* file descriptor */
+	ssize_t bytes_read; /*number of bytes read*/
+	ssize_t bytes_written; /*number of bytes read*/
+	char *buf = malloc(sizeof(char) * letters);/*buffer to store the file content & allocate memory for d buff*/
 
-	if (filename ==NULL || buf == NULL)
+
+	if (filename == NULL)
 		return (0);
 
-	fd = open(filename,O_RDONLY);
-	if (fd == -1)
+	fd = open(filename, O_RDONLY);/*open file in read-only mode*/
+
+	if (buf == NULL)/* check if memory allocate failed*/
 	{
-		free(buf);
+		close(fd);
 		return (0);
 	}
 
-	lenght = read(fd, buf, letters);
-	if (lenght == -1)
+	bytes_read = read(fd, buf, letters);/*read up 2 letters from d file*/
+
+	if (bytes_read == -1)
 	{
 		free(buf);
 		close(fd);
 		return (0);
 	}
-	if (write(STDOUT_FILENO, buf, lenght) != lenght)
+	
+	bytes_written = write(STDOUT_FILENO, buf, bytes_read);
+
+	if (bytes_written == -1 || bytes_written != bytes_read)
 	{
 		free(buf);
 		close(fd);
@@ -45,6 +53,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	free(buf);
 	close(fd);
-
-	return (lenght);
+	return (bytes_written);
 }
