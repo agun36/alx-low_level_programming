@@ -98,13 +98,8 @@ int main(int argc, char *argv[])
 	char buffer[BUFFER_SIZE];
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
-	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-
 	file_from = open(argv[1], O_RDONLY);
+	check_args(argc);
 
 	check_read((ssize_t)file_from, argv[1], -1, -1);
 
