@@ -3,52 +3,51 @@
 #include <string.h>
 
 /**
- * generate_key - Generates a key based on the username.
- * @username: The username for which to generate the key.
- *
- * Return: The generated key.
- */
-char *generate_key(const char *username)
-{
-	size_t username_len = strlen(username);
-	char *key = malloc(username_len + 1);
-	size_t i;
-
-	if (key == NULL)
-	{
-		fprintf(stderr, "Memory allocation failed.\n");
-		exit(EXIT_FAILURE);
-	}
-
-	for (i = 0; i < username_len; i++)
-	{
-		key[i] = username[i] - i;
-	}
-	key[i] = '\0';
-
-	return (key);
-}
-
-/**
- * main - Entry point.
- * @argc: The number of command-line arguments.
- * @argv: An array containing the command-line arguments.
+ * main - Generates and prints passwords for the crackme5 executable.
+ * @argc: The number of arguments supplied to the program.
+ * @argv: An array of pointers to the arguments.
  *
  * Return: Always 0.
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	char *username;
-	char *key;
-	if (argc != 2)
-	{
-		fprintf(stderr, "Usage: %s username\n", argv[0]);
-		return (EXIT_FAILURE);
-	}
-	username = argv[1];
-	key = generate_key(username);
+	char password[7], *codex;
+	int len = strlen(argv[1]), i, tmp;
 
-	printf("%s\n", key);
-	free(key);
+	codex = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
+
+	tmp = (len ^ 59) & 63;
+	password[0] = codex[tmp];
+
+	tmp = 0;
+	for (i = 0; i < len; i++)
+		tmp += argv[1][i];
+	password[1] = codex[(tmp ^ 79) & 63];
+
+	tmp = 1;
+	for (i = 0; i < len; i++)
+		tmp *= argv[1][i];
+	password[2] = codex[(tmp ^ 85) & 63];
+
+	tmp = 0;
+	for (i = 0; i < len; i++)
+	{
+		if (argv[1][i] > tmp)
+			tmp = argv[1][i];
+	}
+	srand(tmp ^ 14);
+	password[3] = codex[rand() & 63];
+
+	tmp = 0;
+	for (i = 0; i < len; i++)
+		tmp += (argv[1][i] * argv[1][i]);
+	password[4] = codex[(tmp ^ 239) & 63];
+
+	for (i = 0; i < argv[1][0]; i++)
+		tmp = rand();
+	password[5] = codex[(tmp ^ 229) & 63];
+
+	password[6] = '\0';
+	printf("%s", password);
 	return (0);
 }
