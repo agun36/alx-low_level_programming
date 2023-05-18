@@ -38,13 +38,15 @@ char *generate_key(const char *username)
  */
 int main(int argc, char *argv[])
 {
+	char *username;
+	char *key;
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: %s username\n", argv[0]);
 		return (EXIT_FAILURE);
 	}
-	char *username = argv[1];
-	char *key = generate_key(username);
+	username = argv[1];
+	key = generate_key(username);
 
 	printf("%s\n", key);
 	free(key);
