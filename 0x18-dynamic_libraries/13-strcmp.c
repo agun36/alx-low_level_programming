@@ -5,7 +5,7 @@
  * @s1: The first string to be compared.
  * @s2: The second string to be compared.
  *
- * Return: 0 if the strings are equal, negative if s1 < s2, positive if s1 > s2.
+ * Return: 0 if the str are equal, negat if s1 < s2, positive if s1 > s2.
  */
 int _strcmp(char *s1, char *s2)
 {
