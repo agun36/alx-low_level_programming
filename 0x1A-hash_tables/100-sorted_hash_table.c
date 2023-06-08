@@ -141,11 +141,10 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 }
 
 /**
-shash_table_print - prints the key/value pairs in the sorted hash table
-
-@ht: the hash table to print
-
-Return: void
+ * shash_table_print - prints the key/value pairs in the sorted hash table
+ * @ht: the hash table to print
+ *
+ * Return: void
 */
 void shash_table_print(const shash_table_t *ht)
 {
@@ -191,7 +190,7 @@ node = ht->stail;
 
 while (node != NULL)
 {
-if (flag == 1)
+	if (flag == 1)
 printf(", ");
 printf("'%s': '%s'", node->key, node->value);
 flag = 1;
@@ -202,12 +201,10 @@ printf("}\n");
 }
 
 /**
-
-shash_table_delete - deletes a sorted hash table
-
-@ht: the hash table to delete
-
-Return: void
+ * shash_table_delete - deletes a sorted hash table
+ * @ht: the hash table to delete
+ * 
+ * Return: void
 */
 void shash_table_delete(shash_table_t *ht)
 {
