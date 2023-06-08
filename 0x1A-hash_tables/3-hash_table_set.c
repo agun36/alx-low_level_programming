@@ -2,10 +2,6 @@
 #include <string.h>
 #include "hash_tables.h"
 
-#include <stdlib.h>
-#include <string.h>
-#include "hash_tables.h"
-
 /**
  * create_node - Creates a new hash node
  * @key: The key string
