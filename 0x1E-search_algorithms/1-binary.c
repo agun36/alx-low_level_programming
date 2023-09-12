@@ -8,15 +8,15 @@
  * @size: is the number of elements
  * in array
  * @value: is the value to search for
- * Return: index containing `value`, or -1 if
- * `value` not found or `array` is NULLyour function
+ * Return: index containing value, or -1 if
+ * value not found or array is NULLyour function
  * return -1 */
 int binary_search(int *array, size_t size, int value)
 {
 	size_t low = 0;
 	size_t high = size - 1;
 	size_t mid;
-	size_t i;
+	size_t i = 0;
 
 	if (array != NULL)
 	{
