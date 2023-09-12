@@ -9,7 +9,7 @@
  * in array
  * @value: is the value to search for
  * Return: index containing `value`, or -1 if
- * `value` not found or `array` is NULLyour function must
+ * `value` not found or `array` is NULLyour function
  * return -1 */
 int binary_search(int *array, size_t size, int value)
 {
@@ -43,6 +43,5 @@ int binary_search(int *array, size_t size, int value)
 			}
 		}
 	}
-
 	return (-1);
 }
