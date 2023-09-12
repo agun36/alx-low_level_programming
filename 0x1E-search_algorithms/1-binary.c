@@ -8,7 +8,8 @@
  * @size: is the number of elements
  * in array
  * @value: is the value to search for
- * Return:  your function must
+ * Return: index containing `value`, or -1 if
+ * `value` not found or `array` is NULLyour function must
  * return -1 */
 int binary_search(int *array, size_t size, int value)
 {
@@ -28,7 +29,6 @@ int binary_search(int *array, size_t size, int value)
 				printf("%d, ", array[i]);
 			}
 			printf("%d\n", array[i]);
-
 			if (array[mid] < value)
 			{
 				low = mid + 1;
