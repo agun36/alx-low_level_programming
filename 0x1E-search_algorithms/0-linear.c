@@ -9,7 +9,7 @@
  * @size: The number of elements in the array
  * @value: The value to search for
  *
- * Returns: The index of the first occurrence of the
+ * Return: The index of the first occurrence of the
  * value in the array, or -1 if the value is not found
  */
 int linear_search(int *array, size_t size, int value)
