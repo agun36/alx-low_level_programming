@@ -10,8 +10,8 @@
  * @value: is the value to search for
  * Return: index containing value, or -1 if
  * value not found or array is NULLyour function
- * return -1 
- * */
+ * return -1
+ **/
 int binary_search(int *array, size_t size, int value)
 {
 	size_t low = 0, mid;
